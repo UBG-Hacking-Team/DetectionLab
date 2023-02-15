@@ -36,6 +36,7 @@ If ($hostname -ne "win10" -And (Get-Service -Name WinDefend -ErrorAction Silentl
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Windows Defender has already been disabled or uninstalled."
 }
 
+<#
 # Purpose: Downloads and unzips a copy of the latest Mimikatz trunk
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Determining latest release of Mimikatz..."
 $tag = (Invoke-WebRequest "https://api.github.com/repos/gentilkiwi/mimikatz/releases" -UseBasicParsing | ConvertFrom-Json)[0].tag_name
@@ -103,5 +104,6 @@ If (-not (Test-Path "c:\Tools\PurpleSharp\PurpleSharp.exe")) {
 } Else {
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) PurpleSharp was already installed. Moving On."
 }
+#>
 
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Red Team tooling installation complete!"
